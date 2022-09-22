@@ -29,7 +29,7 @@ class Category(models.Model):
         db_table = "category"
 
     def __str__(self):
-        return f'{str(self.id)} - {self.category}'
+        return f'{str(self.id)} - {self.id_brand.brand_name} -{self.category}'
 
 class CatalogData(models.Model):
     id_brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
