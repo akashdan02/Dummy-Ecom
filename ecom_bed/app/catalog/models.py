@@ -15,7 +15,7 @@ class Brand(models.Model):
         db_table = "brand"
 
     def __str__(self):
-        return f'{str(self.id)} - {str(self.brand_name)}'
+        return f'{str(self.id)} - {self.brand_name}'
 
 class Category(models.Model):
     id_brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
@@ -29,7 +29,7 @@ class Category(models.Model):
         db_table = "category"
 
     def __str__(self):
-        return f'{str(self.id)} - {str(self.category)}'
+        return f'{str(self.id)} - {self.category}'
 
 class CatalogData(models.Model):
     id_brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
@@ -51,4 +51,4 @@ class CatalogData(models.Model):
         db_table = "catalog"
     
     def __str__(self):
-         return f'{str(self.id)} - {str(self.title)}'
+         return f'{str(self.id)} - {self.title}'
