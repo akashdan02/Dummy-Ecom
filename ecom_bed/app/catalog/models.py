@@ -6,6 +6,7 @@ from django.contrib.postgres.fields import ArrayField
 
 class Brand(models.Model):
     brand_name = models.CharField(max_length = 50)
+
     is_active = models.PositiveSmallIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -14,11 +15,12 @@ class Brand(models.Model):
         db_table = "brand"
 
     def __str__(self):
-        return self.brand_name
+        return f'{str(self.id)} - {str(self.brand_name)}'
 
 class Category(models.Model):
     id_brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     category = models.CharField(max_length=100)
+
     is_active = models.PositiveSmallIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -27,7 +29,7 @@ class Category(models.Model):
         db_table = "category"
 
     def __str__(self):
-        return self.category
+        return f'{str(self.id)} - {str(self.category)}'
 
 class CatalogData(models.Model):
     id_brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
@@ -49,4 +51,4 @@ class CatalogData(models.Model):
         db_table = "catalog"
     
     def __str__(self):
-        return self.title
+         return f'{str(self.id)} - {str(self.title)}'
