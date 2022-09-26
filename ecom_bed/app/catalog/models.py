@@ -53,4 +53,3 @@ class CatalogData(models.Model):
     def __str__(self):
          return f'{str(self.id)} - {self.title}'
 
-    # [https://dummyjson.com/image/i/products/1/1.jpg,https://dummyjson.com/image/i/products/1/2.jpg,https://dummyjson.com/image/i/products/1/3.jpg,https://dummyjson.com/image/i/products/1/4.jpg,https://dummyjson.com/image/i/products/1/thumbnail.jpg]
