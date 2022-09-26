@@ -52,3 +52,4 @@ class CatalogData(models.Model):
     
     def __str__(self):
          return f'{str(self.id)} - {self.title}'
+
